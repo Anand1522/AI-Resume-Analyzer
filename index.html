@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚀 AI Resume Analyzer</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin:0;
+}
+
+.container{
+    width:600px;
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+h2{
+    text-align:center;
+    color:#38bdf8;
+}
+
+textarea{
+    width:100%;
+    height:180px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    margin-top:10px;
+    resize:none;
+    font-size:14px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    background:#38bdf8;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.result{
+    margin-top:20px;
+    background:#0f172a;
+    padding:15px;
+    border-radius:10px;
+}
+
+.score{
+    color:#22c55e;
+    font-size:24px;
+    font-weight:bold;
+}
+
+ul{
+    margin-top:5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🚀 AI Resume Analyzer</h2>
+
+<textarea id="resume" placeholder="Paste your resume text here..."></textarea>
+
+<button onclick="analyzeResume()">Analyze Resume</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<script>
+
+function analyzeResume(){
+
+let text=document.getElementById("resume").value.toLowerCase();
+
+if(text.trim()===""){
+    alert("Please paste your resume text.");
+    return;
+}
+
+const skills=[
+"python",
+"sql",
+"excel",
+"power bi",
+"tableau",
+"machine learning",
+"data science",
+"deep learning",
+"java",
+"c",
+"c++",
+"javascript",
+"html",
+"css",
+"react",
+"git",
+"github",
+"aws",
+"numpy",
+"pandas"
+];
+
+let found=[];
+let missing=[];
+
+skills.forEach(skill=>{
+    if(text.includes(skill)){
+        found.push(skill);
+    }else{
+        missing.push(skill);
+    }
+});
+
+let score=Math.round((found.length/skills.length)*100);
+
+let level="Beginner";
+
+if(score>=80){
+    level="Excellent";
+}
+else if(score>=60){
+    level="Good";
+}
+else if(score>=40){
+    level="Average";
+}
+else{
+    level="Needs Improvement";
+}
+
+let suggestions=[];
+
+if(!text.includes("project")){
+    suggestions.push("Add Projects Section");
+}
+
+if(!text.includes("experience")){
+    suggestions.push("Add Experience Section");
+}
+
+if(!text.includes("skill")){
+    suggestions.push("Add Skills Section");
+}
+
+if(found.length<8){
+    suggestions.push("Add more technical keywords");
+}
+
+if(suggestions.length===0){
+    suggestions.push("Resume looks well optimized");
+}
+
+document.getElementById("result").innerHTML=`
+
+<h3 class="score">ATS Score: ${score}/100</h3>
+
+<p><b>Resume Rating:</b> ${level}</p>
+
+<p><b>Skills Found (${found.length}):</b></p>
+<ul>
+${found.length ? found.map(skill=>`<li>${skill}</li>`).join("") : "<li>No major skills detected</li>"}
+</ul>
+
+<p><b>Missing Skills (${missing.length}):</b></p>
+<ul>
+${missing.slice(0,8).map(skill=>`<li>${skill}</li>`).join("")}
+</ul>
+
+<p><b>Suggestions:</b></p>
+<ul>
+${suggestions.map(item=>`<li>${item}</li>`).join("")}
+</ul>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
