@@ -36,5 +36,5 @@ Day 1 ✅ AI Resume Analyzer
 
 ## Author
 
-Anand
+Anand,
 B.Tech CSE (Data Science)
