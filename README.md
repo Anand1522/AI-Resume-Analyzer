@@ -10,7 +10,7 @@ Demo Link:
 
 https://airesume-analyze.netlify.app/
 
-## 📸 Screenshot
+## 📸 Screenshots
 
 ![AI-Resume-Analyzer](Screenshots/Screenshot1.png)
 ![AI-Resume-Analyzer](Screenshots/Screenshot2.png)
