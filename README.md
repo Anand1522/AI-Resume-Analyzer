@@ -4,7 +4,19 @@
 
 AI Resume Analyzer is a simple web application that evaluates resume text and provides an ATS-style score based on detected skills and keywords.
 
-## Features
+## 🌐 Live Demo
+
+Demo Link:
+
+https://airesume-analyze.netlify.app/
+
+## 📸 Screenshot
+
+![AI-Resume-Analyzer](Screenshots/Screenshot1.png)
+![AI-Resume-Analyzer](Screenshots/Screenshot2.png)
+![AI-Resume-Analyzer](Screenshots/Screenshot3.png)
+
+## ✨ Features
 
 * ATS Score Calculation
 * Skill Detection
@@ -12,14 +24,14 @@ AI Resume Analyzer is a simple web application that evaluates resume text and pr
 * Resume Improvement Suggestions
 * Modern Responsive UI
 
-## Technologies Used
+## 🛠 Technologies Used
 
 * HTML
 * CSS
 * JavaScript
 * AI-Assisted Development
 
-## Demo
+## 📋 How It Works
 
 Paste resume text and receive:
 
@@ -28,13 +40,16 @@ Paste resume text and receive:
 * Missing Skills
 * Suggestions
 
-## Challenge
+## 🎯 Challenge
 
-This project is part of my 30 Days 30 AI Websites Challenge where I build and publish one AI-assisted website every day.
+This project is part of my **30 Days 30 AI Websites Challenge**, where I build and publish one AI-assisted website every day.
 
-Day 1 ✅ AI Resume Analyzer
+### Progress
 
-## Author
+* Day 1 ✅ AI Resume Analyzer
+
+## 👨‍💻 Author
 
 Anand,
+
 B.Tech CSE (Data Science)
